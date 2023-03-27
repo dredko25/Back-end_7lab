@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleR.css">
+    <title>Faculty</title>
+</head>
+
+<body>
+    {{> header}}
+    <div class="wrapper">
+        <div>
+            <form method="post" action="/FacultyResC/create">
+                <h1>Create Record</h1>
+                <label for="ID_Faculty">Faculty ID:</label>
+                <input type="number" class="ID_faculty" name="ID_Faculty"><br>
+                <label for="Name">Faculty Name:</label>
+                <input type="text" class="field" name="Name"><br>
+                <label for="Description">Description:</label>
+                <input type="text" class="field" name="Description"><br>
+                <button type="submit">Add record</button>
+            </form>
+        </div>
+
+        {{#if ok}}
+        <div>
+            <h1>Result</h1>
+            <ul>
+                <li>
+                    <h2>{{result.Name}}</h2>
+                    <p>ID Faculty: {{result.ID_Faculty}}</p>
+                    <p>Description: {{result.Description}}</p>
+                </li>
+            </ul>
+        </div>
+        {{/if}}
+        {{#if err}}
+        <div>
+            <h1>Result</h1>
+            <h1>{{text}}</h1>
+        </div>
+        {{/if}}
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleR.css">
+    <title>Teacher</title>
+</head>
+
+<body>
+    {{> header}}
+    <div class="wrapper">
+        <div>
+            <form method="post" action="/TeacherResU/update" enctype="multipart/form-data">
+                <h1>Update Record</h1>
+                <label for="id">Teacher ID for update:</label>
+                <input type="number" id="id" name="id"><br>
+                <label for="Name">Teacher Name:</label>
+                <input type="text" class="field" name="Name"><br>
+                <label for="Surname">Teacher Surname:</label>
+                <input type="text" class="field" name="Surname"><br>
+                <label for="Phone">Teacher Phone:</label>
+                <input type="text" class="field" name="Phone"><br>
+                <label for="ID_Department">Department ID:</label>
+                <input type="number" name="ID_Department"><br>
+                <label for="Image">Image:</label>
+                <input type="file" name="Image" class="button-file" accept="image/*"><br>
+                <button type="submit">Update record</button>
+            </form>
+        </div>
+
+        {{#if ok}}
+        <div>
+            <h1>Result</h1>
+            <ul>
+                <li>
+                    <h2>ID Teacher: {{result.ID_Teacher}}</h2>
+                    <p>Name: {{result.Name}}</p>
+                    <p>Surname: {{result.Surname}}</p>
+                    <p>Phone: {{result.Phone}}</p>
+                    <p>Department: {{result.ID_Department}}</p>
+                    <img src="data:image/png;base64,{{im}}" alt="Teacher image" height="100px" width="75px">
+                </li>
+            </ul>
+        </div>
+        {{/if}}
+        {{#if err}}
+        <div>
+            <h1>Result</h1>
+            <h1>{{text}}</h1>
+        </div>
+        {{/if}}
+
+    </div>
+</body>
+
+</html>

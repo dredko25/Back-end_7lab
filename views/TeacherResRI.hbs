@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleR.css">
+    <title>Teacher</title>
+</head>
+
+<body>
+    {{> header}}
+    <div class="wrapper">
+        <div>
+            <form method="GET" action="/TeacherResRI/result" class="line_form">
+                <label for="id">Teacher ID:</label>
+                <input type="number" id="id" name="id">
+                <button type="submit">Get Teacher by ID</button>
+            </form>
+        </div>
+
+        {{#if ok}}
+        <div>
+            <h1>Result</h1>
+            <ul>
+                <li>
+                    <h2>ID Teacher: {{result.ID_Teacher}}</h2>
+                    <p>Name: {{result.Name}}</p>
+                    <p>Surname: {{result.Surname}}</p>
+                    <p>Phone: {{result.Phone}}</p>
+                    <p>Department: {{result.ID_Department}}</p>
+                    <img src="data:image/png;base64,{{im}}" alt="Teacher image" height="100px" width="75px">
+                </li>
+            </ul>
+        </div>
+        {{/if}}
+        {{#if err}}
+        <div>
+            <h1>Result</h1>
+            <h1>{{text}}</h1>
+        </div>
+        {{/if}}
+
+    </div>
+</body>
+
+</html>

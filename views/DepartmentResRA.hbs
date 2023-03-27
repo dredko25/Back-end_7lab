@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styleR.css">
+    <title>Department</title>
+</head>
+
+<body>
+    {{> header}}
+    <div class="wrapper">
+        <div>
+            <h1>List of Departments</h1>
+            <ul>
+                {{#each departments}}
+                <li>
+                    <h2>{{this.Name}}</h2>
+                    <p>ID Department: {{this.ID_Department}}</p>
+                    <p>Description: {{this.Description}}</p>
+                    <p>ID Faculty: {{this.ID_Faculty}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
