@@ -112,6 +112,18 @@ app.get('/TeacherResD', (req, res) => {
 app.use('/TeacherResD', teacherRoutes);
 
 
+app.use('/api/TeacherResRA', teacherRoutes);
+app.use('/api/TeacherResRI/result', teacherRoutes);
+
+app.use('/api/DepartmentResRA', departmentRoutes);
+app.use('/api/DepartmentResRI/result', departmentRoutes);
+
+app.use('/api/FacultyResRA', facultyRoutes);
+app.use('/api/FacultyResRI/result', facultyRoutes);
+
+app.use('/api', teacherRoutes);
+app.use('/api', facultyRoutes);
+app.use('/api', departmentRoutes);
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
